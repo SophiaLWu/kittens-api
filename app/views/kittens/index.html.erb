@@ -10,10 +10,13 @@
   <% if @kittens.any? %>
     <% @kittens.each do |kitten| %>
       <tr>
-        <td><%= kitten.name %></td>
+        <td><%= link_to kitten.name, kitten_path(kitten) %></td>
         <td><%= kitten.age %></td>
         <td><%= kitten.cuteness %></td>
         <td><%= kitten.softness %></td>
+        <td><%= link_to 'Edit', edit_kitten_path(kitten) %></td>
+        <td><%= link_to 'Delete', kitten, method: :delete,
+                              data: { confirm: "You sure?" } %></td>
       </tr>
     <% end %>
   <% end %>
