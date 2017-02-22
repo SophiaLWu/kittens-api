@@ -1,0 +1,20 @@
+<h1>All Kittens</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Cuteness</th>
+    <th>Softness</th>
+  </tr>
+  <% if @kittens.any? %>
+    <% @kittens.each do |kitten| %>
+      <tr>
+        <td><%= kitten.name %></td>
+        <td><%= kitten.age %></td>
+        <td><%= kitten.cuteness %></td>
+        <td><%= kitten.softness %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

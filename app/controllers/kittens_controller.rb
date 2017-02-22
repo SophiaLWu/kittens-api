@@ -5,7 +5,7 @@ class KittensController < ApplicationController
   end
 
   def show
-    @kitten = Kitten.find(kitten_params[:id])
+    @kitten = Kitten.find(params[:id])
   end
 
   def new
@@ -24,11 +24,11 @@ class KittensController < ApplicationController
   end
 
   def edit
-    @kitten = Kitten.find(kitten_params[:id])
+    @kitten = Kitten.find(params[:id])
   end
 
   def update
-    @kitten = Kitten.find(kitten_params[:id])
+    @kitten = Kitten.find(params[:id])
     if @user.update_attributes(kitten_params)
       flash[:success] = "Kitten updated."
       redirect_to @kitten
